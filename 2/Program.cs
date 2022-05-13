@@ -1,2 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/*Напишите программу, которая выводит
+третью цифру заданного числа или сообщает, что третьей
+цифры нет.
+*/
+Console.Write("Введите число:");
+int number = Convert.ToInt32(Console.ReadLine());
+if ((number - 100) < 0)
+{
+    Console.WriteLine("В введенном числе третей цифры нет");
+}
+else
+{
+    while ((number - 1000) > 0)// в данном цикле добиваюсь того чтоб число стало 3-х значным(откидывая каждый раз последнюю цифру)
+    {
+        number = number / 10;
+    }
+    int res = number % 10;// затем нахожу последнюю цифру этого числа
+    Console.WriteLine($"Третья цифра введенного числа: {res}");
+}
